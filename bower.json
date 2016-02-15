@@ -1,0 +1,30 @@
+{
+  "name": "poly-ng",
+  "description": "Polymer with angular 2",
+  "main": "index.js",
+  "authors": [
+    "Owais Zahid"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "ploymer",
+    "angular",
+    "angularJS"
+  ],
+  "homepage": "https://github.com/zaknuces/poly-ng",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}
