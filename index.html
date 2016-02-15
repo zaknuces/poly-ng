@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Polymer Angular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <style is="custom-style">
+      :host {
+          display: block;
+          position: relative;
+          min-height: var(--paper-item-min-height, 48px);
+          padding: 0px 16px;
+      }
+      :host([disabled]) {
+          color: var(--paper-item-disabled-color, --disabled-text-color);
+          @apply(--paper-item-disabled);
+      }
+      :host(:focus) {
+          position: relative;
+          outline: 0;
+          @apply(--paper-item-focused);
+      }
+      :host(:focus):before {
+          @apply(--layout-fit);
+          background: currentColor;
+          content: '';
+          opacity: var(--dark-divider-opacity);
+          pointer-events: none;
+          @apply(--paper-item-focused-before);
+      }
+      div[role="listbox"] {
+          border: 1px solid #e5e5e5;
+      }
+    </style>
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <!-- endbuild -->
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+
+</html>
