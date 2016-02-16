@@ -1,0 +1,21 @@
+<paper-header-panel class="blue">
+    <div class="paper-header">My First Angular 2 App</div>
+    <div class="content container flex-horizontal">
+      <div role="listbox" class="list-view">
+          <paper-item *ngFor="#product of products" [product]="product" (click)="productClicked(product)">
+              <paper-item-body two-line>
+                  <div>{{ product.name }}</div>
+                  <div secondary>Serial Number: {{ product.serialNumber}} | added: {{ product.entryDate }}</div>
+              </paper-item-body>
+          </paper-item>
+      </div>
+      <div class="detail-view">
+          <form id="detailForm">
+              <paper-input label="Name" value="{{selectedItem.name}}" required auto-validate error-message="Name is required."></paper-input>
+              <paper-input label="Description" value="{{selectedItem.description}}" char-counter max-length="30"></paper-input>
+              <paper-input label="Serial Number" value="{{selectedItem.serialNumber}}" disabled></paper-input>
+              <paper-checkbox value="{{selectedItem.isExpired}}">is Expired</paper-checkbox>
+          </form>
+      </div>
+    </div>
+</paper-header-panel>

@@ -4,6 +4,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <style is="custom-style">
+      paper-header-panel {
+         height: 240px;
+         @apply(--shadow-elevation-2dp);
+      }
+      .paper-header {
+         height: 60px;
+         font-size: 16px;
+         line-height: 60px;
+         color: white;
+         transition: height 0.2s;
+      }
+
+      .blue .paper-header {
+          background-color: var(--paper-light-blue-500);
+      }
+
+      .blue .content {
+          background: linear-gradient(white, #b3e5fc);
+      }
+
+      .content {
+          height: 2000px;
+      }
+
       :host {
           display: block;
           position: relative;
@@ -30,12 +54,28 @@
       div[role="listbox"] {
           border: 1px solid #e5e5e5;
       }
+
+      .flex-horizontal {
+          @apply(--layout-horizontal);
+      }
+
+      .list-view {
+          @apply(--layout-flex-2);
+      }
+
+      .detail-view {
+        @apply(--layout-flex);
+      }
     </style>
 
     <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/iron-form/iron-form.html">
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
     <!-- endbuild -->
 
     <!-- 1. Load libraries -->
