@@ -4,10 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <style is="custom-style">
+      :root {
+          --error-color: red;
+      }
+
+      body {
+          margin: 0;
+          margin-left: 1px;
+      }
+
       paper-header-panel {
          height: 240px;
          @apply(--shadow-elevation-2dp);
       }
+
       .paper-header {
          height: 60px;
          font-size: 16px;
@@ -20,41 +30,6 @@
           background-color: var(--paper-light-blue-500);
       }
 
-      .blue .content {
-          background: linear-gradient(white, #b3e5fc);
-      }
-
-      .content {
-          height: 2000px;
-      }
-
-      :host {
-          display: block;
-          position: relative;
-          min-height: var(--paper-item-min-height, 48px);
-          padding: 0px 16px;
-      }
-      :host([disabled]) {
-          color: var(--paper-item-disabled-color, --disabled-text-color);
-          @apply(--paper-item-disabled);
-      }
-      :host(:focus) {
-          position: relative;
-          outline: 0;
-          @apply(--paper-item-focused);
-      }
-      :host(:focus):before {
-          @apply(--layout-fit);
-          background: currentColor;
-          content: '';
-          opacity: var(--dark-divider-opacity);
-          pointer-events: none;
-          @apply(--paper-item-focused-before);
-      }
-      div[role="listbox"] {
-          border: 1px solid #e5e5e5;
-      }
-
       .flex-horizontal {
           @apply(--layout-horizontal);
       }
@@ -63,22 +38,32 @@
           @apply(--layout-flex-2);
       }
 
+      .list-view paper-item {
+          padding: 10px;
+          border-color: lightgrey;
+          border-style: solid;
+          border-width: 1px;
+      }
+
       .detail-view {
         @apply(--layout-flex);
+        margin: 5px;
+        --error-color: green;
       }
     </style>
 
-    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <!-- Load web components lite -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- Load Polymer components -->
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
     <link rel="import" href="bower_components/iron-form/iron-form.html">
     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
-    <!-- endbuild -->
 
-    <!-- 1. Load libraries -->
+    <!-- Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -88,7 +73,7 @@
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-    <!-- 2. Configure SystemJS -->
+    <!-- Configure SystemJS -->
     <script>
       System.config({
         packages: {
@@ -104,7 +89,7 @@
 
   </head>
 
-  <!-- 3. Display the application -->
+  <!-- Display the application -->
   <body>
     <my-app>Loading...</my-app>
   </body>

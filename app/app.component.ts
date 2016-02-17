@@ -1,3 +1,7 @@
+/**
+ * This is the root component that will host polymer components.
+ * Created by owais zahid <owais.zahid@autodesk.com> on 02/15/2016
+ */
 import {Component} from 'angular2/core';
 import {Product} from './Product';
 import {NgFor} from 'angular2/common';

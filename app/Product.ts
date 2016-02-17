@@ -1,9 +1,9 @@
 /**
  * A sample model class that represents a product in a inventory catalog system.
  *
- * Created by owais zahid <owais.zahid@autodesk.com> on 10/30/2015.
+ * Created by owais zahid <owais.zahid@autodesk.com> on 02/16/2015.
  */
-export class Product {
+ export class Product {
     entryDate: Date;
     name: string;
     description: string;
