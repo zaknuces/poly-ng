@@ -31,4 +31,8 @@ export class AppComponent {
 	newProduct() {
 			this.products.push(this.selectedItem = new Product(new Date('10 Jun, 2014'), 'Feul Injector', 'Delphi FI', 'Multi-Port Fuel', '2010', false))
 	}
+
+  onNameChange(event) {
+    this.selectedItem.name = event.target.value;
+  }
 }

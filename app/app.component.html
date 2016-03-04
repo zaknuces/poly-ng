@@ -11,7 +11,7 @@
       </div>
       <div class="detail-view">
           <form id="detailForm">
-              <paper-input label="Name" value="{{selectedItem.name}}" required auto-validate error-message="Name is required."></paper-input>
+              <paper-input label="Name" value="{{selectedItem.name}}" (change)="onNameChange($event)" required auto-validate error-message="Name is required."></paper-input>
               <paper-input label="Description" value="{{selectedItem.description}}" char-counter maxlength="30"></paper-input>
               <paper-input label="Serial Number" value="{{selectedItem.serialNumber}}" disabled></paper-input>
               <paper-checkbox label="Is Expired" value="{{selectedItem.isExpired}}">is Expired</paper-checkbox>
