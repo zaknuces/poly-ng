@@ -18,7 +18,8 @@ export class AppComponent {
   constructor() {
     this.products = [
 				new Product(new Date('10 Nov, 2013'), 'Brake', 'Car Hydrolics Brake', 'good safely record', '1000', false),
-				new Product(new Date('10 Jun, 2014'), 'Chassis', 'Mclaren Chassis', 'strong support', '2010', false)
+				new Product(new Date('10 Jun, 2014'), 'Chassis', 'Mclaren Chassis', 'strong support', '2010', false),
+        new Product(new Date('05 Mar, 2015'), 'Fuel Guage', 'Supreme', 'high quality', '3050', false)
 		];
 
 		this.selectedItem = this.products[0];

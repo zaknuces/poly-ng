@@ -1,8 +1,8 @@
 <paper-header-panel class="blue">
-    <div class="paper-header">My First Angular 2 Application</div>
+    <div class="paper-header"> UX DevCon Demo</div>
     <div class="content fit container flex-horizontal">
       <div role="listbox" class="list-view">
-          <paper-item *ngFor="#product of products" [product]="product" (click)="productClicked(product)" role="listitem">
+          <paper-item *ngFor="#product of products" [product]="product" (focus)="productClicked(product)" role="listitem">
               <paper-item-body two-line>
                   <div>{{ product.name }}</div>
                   <div secondary>Serial Number: {{ product.serialNumber}} | added: {{ product.entryDate | date }}</div>
@@ -10,6 +10,9 @@
           </paper-item>
       </div>
       <div class="detail-view">
+          <paper-toolbar>
+              <span class="title">Product Detail</span>
+          </paper-toolbar>
           <form id="detailForm">
               <paper-input label="Name" value="{{selectedItem.name}}" (change)="onNameChange($event)" required auto-validate error-message="Name is required."></paper-input>
               <paper-input label="Description" value="{{selectedItem.description}}" char-counter maxlength="30"></paper-input>

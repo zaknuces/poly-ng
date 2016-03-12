@@ -14,20 +14,23 @@
       }
 
       paper-header-panel {
-         height: 240px;
          @apply(--shadow-elevation-2dp);
       }
 
       .paper-header {
          height: 60px;
-         font-size: 16px;
+         font-size: 24px;
          line-height: 60px;
          color: white;
          transition: height 0.2s;
+         font-weight: bold;
+         font-family: 'Roboto', 'Noto', sans-serif;
+         -webkit-font-smoothing: antialiased;
+         text-align: center;
       }
 
       .blue .paper-header {
-          background-color: var(--paper-light-blue-500);
+          background-color: var(--paper-light-blue-800);
       }
 
       .flex-horizontal {
@@ -35,7 +38,7 @@
       }
 
       .list-view {
-          @apply(--layout-flex-2);
+          @apply(--layout-flex);
       }
 
       .list-view paper-item {
@@ -43,23 +46,51 @@
           border-color: lightgrey;
           border-style: solid;
           border-width: 1px;
+          padding-top: 30px;
+          padding-bottom: 30px;
       }
 
       .detail-view {
-        @apply(--layout-flex);
-        margin: 5px;
-        --error-color: green;
+          @apply(--layout-flex);
+          margin: 5px;
+          --error-color: green;
+      }
+
+      #detailForm {
+          padding-left: 5px;
+      }
+
+      #detailForm paper-input,
+      #detailForm paper-checkbox {
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+
+      paper-toolbar {
+          --paper-toolbar-background: var(--paper-light-blue-500);
+          --paper-toolbar-title: {
+              font-style: italic;
+              font-weight: bold;
+          };
       }
     </style>
 
     <!-- Load web components lite -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+
     <!-- Load Polymer components -->
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-styles/default-theme.html">
     <link rel="import" href="bower_components/iron-form/iron-form.html">
     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
 
